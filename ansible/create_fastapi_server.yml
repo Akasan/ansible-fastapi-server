@@ -19,6 +19,6 @@
         src: ../fastapi_server/poetry.lock
         dest: /home/python_scripts/poetry.lock
     - name: Install dependencies
-      command: cd /home/python_scripts && poetry install 
+      command: "poetry install"
       args:
         chdir: /home/python_scripts
