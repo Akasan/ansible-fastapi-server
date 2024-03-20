@@ -20,3 +20,5 @@
         dest: /home/python_scripts/poetry.lock
     - name: Install dependencies
       command: cd /home/python_scripts && poetry install 
+      args:
+        chdir: /home/python_scripts
