@@ -4,8 +4,8 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-app.get(
-    "/",
+@app.get(
+    "/hello",
     description="index"
 )
 def index():
