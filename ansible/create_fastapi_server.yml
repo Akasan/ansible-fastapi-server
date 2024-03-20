@@ -1,0 +1,22 @@
+---
+- name: Create FastAPI server
+  hosts: ansible-fastapi
+  tasks:
+    - name: Create folder for python scripts
+      file:
+        path: /home/python_scripts
+        state: directory
+    - name: Copy python scripts
+      copy:
+        src: ../fastapi-server/main.py
+        dest: /home/python_scripts/main.py
+    - name: Copy pyproject.toml
+      copy:
+        src: ../fastapi-server/pyproject.toml
+        dest: /home/python_scripts/pyproject.toml
+    - name: Copy poetry.lock
+      copy:
+        src: ../fastapi_server/poetry.lock
+        dest: /home/python_scripts/poetry.lock
+    - name: Install dependencies
+      ansible.builtin.command: poetry install 
